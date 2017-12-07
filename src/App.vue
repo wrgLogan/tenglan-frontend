@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    
+    <transition :name="animation">
+      <router-view class="page-container"></router-view>
+    </transition>
   </div>
 </template>
 <script>
@@ -9,7 +11,7 @@ export default {
   name: "app",
   data: function() {
     return {
-      projName: '藤蓝后台管理系统',
+      projName: '藤蓝',  // 项目名称
     };
   },
   computed: {
@@ -22,8 +24,7 @@ export default {
   },
   mounted(){
     var AV = this.AV;
-
-    
+    document.head.getElementsByTagName('title')[0].innerText = this.projName;
   },
   methods: {
     goTo(page) {
@@ -51,7 +52,7 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: #f3f3f5;
+  /* background-color: #f3f3f5; */
   display: flex;
 }
 

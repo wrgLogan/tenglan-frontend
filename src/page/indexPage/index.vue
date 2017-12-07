@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        
+        {{ pageName }}
     </div>
 </template>
 <script src="./script.js"></script>
