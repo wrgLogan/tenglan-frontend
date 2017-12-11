@@ -1,3 +1,110 @@
 .page{
     
 }
+
+.banner-container img{
+    width: 100%;
+    width: 100vw;
+    height: 31.249950527573955vw;
+}
+
+.proj-title{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.proj-container{
+    text-align: center;
+    padding-bottom: 90px;
+}
+
+.proj-item{
+    display: inline-block;
+    width: 350px;
+    height: 450px;
+    box-shadow: 0px 3px 10px 3px rgba(0,0,0, .1); 
+    margin: 0 23px;
+    background-color: #fafafa;
+    color: #333;
+    transition: all .3s;
+}
+
+.proj-item img{
+    width: 100%;
+    position: relative;
+    top: -1px;
+}
+
+.proj-item:hover{
+    background-color: #1d478a;
+    color: #fff;
+}
+
+.proj-item .title{
+    text-align: center;
+    font-size: 16px;
+    margin: 37px 0 30px;
+}
+
+.proj-item .text{
+    text-align: center;
+    font-size:  14px;
+}
+
+.video-container{
+    height: 720px;
+    background-color: #707070;
+}
+
+.video-container + img{
+    width: 100%;
+}
+
+.about-container{
+    text-align: center;
+    padding-bottom: 52px;
+}
+
+.hezuo-container{
+    background-color: #fafafa;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.footer-sec1{
+    height: 175px;
+    background-color: #333333;
+    color: #fff;
+}
+
+.footer-sec2{
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    color: #999;
+    text-align: center;
+}
+
+.footer-sec1 ul{
+    text-align: center;
+}
+
+.footer-sec1 ul li {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    line-height: 34px;
+    margin: 20px 100px;
+}
+
+.video-container{
+    text-align: center;
+    cursor: pointer;
+}
+
+.video-item{
+    height: 100%;   
+    cursor: pointer;
+}

@@ -1,12 +1,13 @@
 <template>
   <div id="app">
+    <nav-header :clickTab="clickTab" :login="login"></nav-header>
     <transition :name="animation">
       <router-view class="page-container"></router-view>
     </transition>
   </div>
 </template>
 <script>
-
+import NavHeader from '@/components/NavHeader.vue'
 export default {
   name: "app",
   data: function() {
@@ -20,7 +21,7 @@ export default {
     }
   },
   components:{
-    
+    NavHeader
   },
   mounted(){
     var AV = this.AV;
@@ -29,7 +30,14 @@ export default {
   methods: {
     goTo(page) {
       this.$switchTo(page);
-    }
+    },
+    clickTab(index) {
+        var routeEmun = ['/', '/project', '/files', '', '', ''];
+        this.$switchTo(routeEmun[index]);
+    },
+    login() {
+      this.$switchTo('/login', 'fade');
+    },
   }
 };
 </script>
@@ -52,16 +60,18 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  /* background-color: #f3f3f5; */
-  display: flex;
+  /* display: flex; */
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .page-container {
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 120px;
+  /* bottom: 0px; */
   width: 100%;
-  height: 100%;
 }
 
 </style>

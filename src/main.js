@@ -29,4 +29,4 @@ var app = new Vue({
   components: { App }
 })
 
-Vue.use(pageSwitcher, { router: router, vm: app, defaultBackward: 'fade' });
+Vue.use(pageSwitcher, { router: router, vm: app, defaultBackward: 'fade', defaultForward: 'fade' });
