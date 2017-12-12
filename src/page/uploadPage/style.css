@@ -1,0 +1,10 @@
+.banner-container img{
+    width: 100%;
+    width: 100vw;
+    height: 18.76955vw;
+}
+
+.title-container{
+    text-align: center;
+    margin: 80px 0 110px;
+}

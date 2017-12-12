@@ -41,7 +41,7 @@
                             <div class="info-item">通过人数：138人</div>
                             <div class="info-item">剩余时间：项目结束</div>
                         </div>
-                        <div class="btn">
+                        <div class="btn" @click="toUpload">
                             申请报名
                         </div>
                     </div>

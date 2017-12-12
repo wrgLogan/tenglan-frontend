@@ -5,6 +5,7 @@ import project from '@/page/projectPage/index'
 import projectInfo from '@/page/projectInfoPage/index'
 import login from '@/page/loginPage/index'
 import files from '@/page/filesPage/index'
+import upload from '@/page/uploadPage/index'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/files',
       name: '资料下载',
       component: files
+    },
+    {
+      path: '/upload',
+      name: '资料上传',
+      component: upload
     }
   ]
 })
