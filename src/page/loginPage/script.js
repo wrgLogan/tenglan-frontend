@@ -26,9 +26,7 @@ export default {
         nextStep: function () {
             var _this = this;
 
-            this.AV.Cloud.signUpOrlogInWithMobilePhone(this.regisMobilePhone, this.regisSmscode, {
-
-            }).then(function() {
+            this.AV.User.signUpOrlogInWithMobilePhone(this.regisMobilePhone, this.regisSmscode).then(function() {
                 _this.regisStep = 2;
             }, function(err) {
 
@@ -124,7 +122,7 @@ export default {
             user.set('university', _this.university);
             user.set('grade', _this.grade);
             user.set('address', _this.address);
-            user.set('address', _this.postCode);
+            user.set('postCode', _this.postCode);
             
             user.save().then(function() {
                 _this.$switchTo('/');
