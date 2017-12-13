@@ -26,12 +26,20 @@ export default {
         nextStep: function () {
             var _this = this;
 
-            this.AV.Cloud.verifySmsCode(this.regisSmscode, this.regisMobilePhone).then(function () {
-                //验证成功
+            this.AV.Cloud.signUpOrlogInWithMobilePhone(this.regisMobilePhone, this.regisSmscode, {
+
+            }).then(function() {
                 _this.regisStep = 2;
-            }, function (err) {
-                //验证失败
-            });
+            }, function(err) {
+
+            })
+
+            // this.AV.Cloud.verifySmsCode(this.regisSmscode, this.regisMobilePhone).then(function () {
+            //     //验证成功
+            //     _this.regisStep = 2;
+            // }, function (err) {
+            //     //验证失败
+            // });
             
         },
         sendCode: (function () {
@@ -110,18 +118,31 @@ export default {
                 return;
             }
 
-            console.log(_this.regisSmscode);
+            var user = this.AV.User.current();
 
-            this.AV.User.signUpOrlogInWithMobilePhone(_this.regisMobilePhone, _this.regisSmscode, {
-                'name': _this.name,
-                'university': _this.university,
-                'grade': _this.grade,
-                'address': _this.address,
-                'postCode': _this.postCode
-            }).then(function(success){
+            user.set('name', _this.name);
+            user.set('university', _this.university);
+            user.set('grade', _this.grade);
+            user.set('address', _this.address);
+            user.set('address', _this.postCode);
+            
+            user.save().then(function() {
                 _this.$switchTo('/');
                 _this.$parent.$data.user = _this.AV.User.current().attributes;
-            });
+            })
+
+            // console.log(_this.regisSmscode);
+
+            // this.AV.User.signUpOrlogInWithMobilePhone(_this.regisMobilePhone, _this.regisSmscode, {
+            //     'name': _this.name,
+            //     'university': _this.university,
+            //     'grade': _this.grade,
+            //     'address': _this.address,
+            //     'postCode': _this.postCode
+            // }).then(function(success){
+            //     _this.$switchTo('/');
+            //     _this.$parent.$data.user = _this.AV.User.current().attributes;
+            // });
         }
     }
 }
