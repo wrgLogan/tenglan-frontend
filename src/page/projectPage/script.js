@@ -1,273 +1,55 @@
 var data = {
     asideIndex: 0,
-    readyList: [{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    }],
-    ongoingList: [{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    }],
-    pastList: [{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    },{
-        title: '耶鲁大学（人工智能）',
-        startDate: '2017/11/23',
-        passNum: 4,
-        targetNum: 10
-    }]
+    readyList: [],
+    ongoingList: [],
+    pastList: [],
+    stage: '正在进行'  // 即将启动  正在进行  往期项目
 };
 
 export default {
-    data: function() {
+    data: function () {
         return data;
     },
     methods: {
-        clickAsideTab: function(i) {
-            this.asideIndex = i;
-            var tag = document.getElementById('scrollTag' + i);
-            
+        clickAsideTab: function (stage) {
+            // this.asideIndex = i;
+            this.stage = stage;
+            console.log(stage);
+            this.getProjectsByStage(stage);
+
             // tag.scrollIntoView();j
         },
-        checkProject: function(proj) {
-            this.$switchTo('/projectInfo');
+        checkProject: function (proj) {
+            // console.log(proj);
+            this.$switchTo('/projectInfo/' + proj.id);
+        },
+        getProjectsByStage: function(stage){
+            var _this = this;
+            this.getProjects({
+                stage: stage
+            }).then(function(res) {
+                _this.clearList();
+                console.log(res);
+                res.list.forEach(function(item){
+                    item.attributes.startDate = _this.formatDate(new Date(item.attributes.startDate), 'yyyy-MM-dd');
+                    if (item.attributes.status == 1) {
+                        _this.readyList.push(item);
+                    } else if (item.attributes.status == 2) {
+                        _this.ongoingList.push(item);
+                    } else if (item.attributes.status == 3) {
+                        _this.pastList.push(item);
+                    }
+                })
+            });
+        },
+        clearList: function() {
+            this.readyList = [];
+            this.ongoingList = [];
+            this.pastList = [];
         }
+    },
+    mounted: function() {
+        var _this = this;
+        this.getProjectsByStage(this.stage);
     }
 }

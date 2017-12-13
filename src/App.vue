@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-header :clickTab="clickTab" :login="login"></nav-header>
+    <nav-header :clickTab="clickTab" :login="login" :username="user.name"></nav-header>
     <transition :name="animation">
       <router-view class="page-container"></router-view>
     </transition>
@@ -13,6 +13,7 @@ export default {
   data: function() {
     return {
       projName: '藤蓝',  // 项目名称
+      user: {}
     };
   },
   computed: {
@@ -38,7 +39,7 @@ export default {
     login() {
       this.$switchTo('/login', 'fade');
     },
-  }
+  },
 };
 </script>
 <style>

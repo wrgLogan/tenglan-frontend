@@ -11,14 +11,14 @@
                     <div class="body">
                         <div class="form-group username">
                             <span class="icon"></span>
-                            <input type="text" placeholder="用户名"/>
+                            <input type="text" placeholder="用户名" v-model="loginMobilePhone"/>
                         </div>
                         <div class="form-group phonecode">
                             <span class="icon"></span>
-                            <input type="text" placeholder="手机验证码"/>
-                            <div class="sendcode">发送验证码</div>
+                            <input type="text" v-model="loginSmscode" placeholder="手机验证码"/>
+                            <div class="sendcode" @click="sendCode($event, 'login')">发送验证码</div>
                         </div>
-                        <div class="submit-btn">
+                        <div class="submit-btn" @click="loginBySmscode">
                             登录
                         </div>
                     </div>
@@ -45,12 +45,12 @@
                         <div v-show="regisStep == 1">
                             <div class="form-group username" >
                                 <span class="icon"></span>
-                                <input type="text" placeholder="用户名(手机号)"/>
+                                <input type="text" placeholder="用户名(手机号)" v-model="regisMobilePhone"/>
                             </div>
                             <div class="form-group phonecode">
                                 <span class="icon"></span>
-                                <input type="text" placeholder="手机验证码"/>
-                                <div class="sendcode">发送验证码</div>
+                                <input type="text" placeholder="手机验证码" v-model="regisSmscode"/>
+                                <div class="sendcode" @click="sendCode($event, 'register')">发送验证码</div>
                             </div>
                             <div class="submit-btn" @click="nextStep">
                                 下一步
@@ -61,26 +61,26 @@
                         <div  v-show="regisStep == 2">
                             <div class="form-group name">
                                 <span class="icon"></span>
-                                <input type="text" placeholder="姓名"/>
+                                <input type="text" v-model="name" placeholder="姓名"/>
                             </div>
                             <div class="form-group school">
                                 <span class="icon"></span>
-                                <input type="text" placeholder="学校"/>
+                                <input type="text" v-model="university" placeholder="学校"/>
                             </div>
                             <div class="form-group grade">
                                 <span class="icon"></span>
-                                <input type="text" placeholder="年级"/>
+                                <input type="text" v-model="grade" placeholder="年级"/>
                             </div>
                             <div class="tixing">为了能将offer寄到您的手中，请您填写收件地址</div>
                             <div class="form-group address">
                                 <span class="icon"></span>
-                                <input type="text" placeholder="地址"/>
+                                <input type="text" v-model="address" placeholder="地址"/>
                             </div>
                             <div class="form-group mailcode">
                                 <span class="icon"></span>
-                                <input type="text" placeholder="邮编"/>
+                                <input type="text" v-model="postCode" placeholder="邮编"/>
                             </div>
-                            <div class="submit-btn" @click="register">
+                            <div class="submit-btn" @click="signUp">
                                 完成
                             </div>
                         </div>

@@ -17,12 +17,12 @@ export default new Router({
       component: index
     },
     {
-      path: '/project',
+      path: '/project/',
       name: '项目列表',
       component: project
     },
     {
-      path: '/projectInfo',
+      path: '/projectInfo/:projectObjectId',
       name: '项目详情',
       component: projectInfo
     },
@@ -37,7 +37,7 @@ export default new Router({
       component: files
     },
     {
-      path: '/upload',
+      path: '/upload/:projectObjectId',
       name: '资料上传',
       component: upload
     }

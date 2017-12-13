@@ -141,3 +141,23 @@
     line-height: 34px;
     margin: 20px 100px;
 }
+
+.text-container{
+    padding: 30px 20px 40px;
+}
+
+.text-nav{
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.text-nav .nav-item{
+    padding: 15px 22px;
+    margin-right: 56px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.text-nav .nav-item.on{
+    border-bottom: 2px solid #1d478a;
+}

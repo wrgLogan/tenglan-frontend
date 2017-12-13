@@ -9,6 +9,7 @@ export default {
         }
     },
     mounted() {
+        console.log(this.$parent.$data);
         var AV = this.AV;
         var _this = this;
         

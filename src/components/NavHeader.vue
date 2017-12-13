@@ -1,7 +1,7 @@
 <template>
     <div class="nav-header">
         <section class="sec1">
-            <a @click="login" href="javascript:void(0);" >登录/注册</a>
+            <a @click="login" href="javascript:void(0);" >{{ username ? username : '登录/注册'}}</a>
         </section>
         <section class="sec2">
             <div class="logo">
@@ -27,7 +27,7 @@ export default {
             nowIndex: 0
         }
     },
-    props: ['clickTab', 'login'],
+    props: ['clickTab', 'login', 'username'],
     methods: {
         onClickTab(index) {
             this.clickTab(index);

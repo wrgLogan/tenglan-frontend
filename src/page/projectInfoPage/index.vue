@@ -6,13 +6,18 @@
                     <img src="../../assets/image/banner.png" />
                 </div>
                 <div class="text-container">
-
+                    <div class="text-nav">
+                        <div class="nav-item on">项目详情</div>
+                        <div class="nav-item">项目师资</div>
+                        <div class="nav-item">报名须知</div>
+                    </div>
+                    <div class="text-content">{{project.attributes.content}}</div>
                 </div>
             </div>
             <div class="side-container">
                 <div class="side-item">
                     <div class="title">
-                        耶鲁大学（人工智能）
+                        {{ project.attributes.title }}
                     </div>
                     <div class="body">
                         <div class="req-container">
@@ -37,8 +42,8 @@
                             </div>
                         </div>
                         <div class="infos">
-                            <div class="info-item">报名人数：538人</div>
-                            <div class="info-item">通过人数：138人</div>
+                            <div class="info-item">报名人数：{{project.attributes.applyNum}}人</div>
+                            <div class="info-item">通过人数：{{project.attributes.passNum}}人</div>
                             <div class="info-item">剩余时间：项目结束</div>
                         </div>
                         <div class="btn" @click="toUpload">
@@ -52,7 +57,7 @@
                     </div>
                     <div class="body">
                         <div class="file-content">
-                            <a href="#">点击下载资料</a>
+                            <a :href="project.attributes.downloadFile.attributes.file.attributes.url" download>点击下载资料</a>
                         </div>
                     </div>
                 </div>

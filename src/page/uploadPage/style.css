@@ -1,10 +1,108 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+}
+
+.banner-container{
+    height: 18.76955vw;
+}
+
 .banner-container img{
     width: 100%;
     width: 100vw;
     height: 18.76955vw;
 }
 
+.main-container{
+    flex: 1;
+}
+
 .title-container{
     text-align: center;
     margin: 80px 0 110px;
+}
+
+.upload-group-container{
+    display: flex;
+    justify-content: center;
+}
+
+.upload-group{
+    display: flex;
+    margin-right: 123px;
+    margin-bottom: 80px;
+}
+
+.upload-group:last-child{
+    margin-right: 0;
+}
+
+.upload-group .add-button{
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background-image: url('../../assets/image/add.png');
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.upload-group .add-button input[type="file"]{
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.upload-group .sec2 .title{
+    color: #333;
+    padding-bottom: 6px;
+}
+
+.upload-group .sec2 .desc{
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.upload-group .sec2 .filename{
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #409eff;
+}
+
+.upload-group .sec2 .sec2-button{
+    font-size: 14px;
+    color: #1e488b;
+    padding: 2px 8px;
+    border: 1px solid #1e488b;
+    display: inline-block;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.upload-group .sec2 .sec2-button a{
+    text-decoration: none;
+    color: #1e488b;
+
+}
+
+.sub-button{
+    text-align: center;
+    width: 208px;
+    margin: 0 auto;
+    padding: 7px 0;
+    color: #fff;
+    background-color: #1e488b;
+    font-size: 16px;
+    cursor: pointer;
+    /* margin-bottom: 50px; */
+}
+
+
+.footer-sec2{
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    color: #999;
+    text-align: center;
 }
