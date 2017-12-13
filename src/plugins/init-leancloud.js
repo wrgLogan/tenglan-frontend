@@ -205,6 +205,37 @@ var install = function (Vue, option) {
         
     }
 
+    // 获取下载文件
+    Vue.prototype.getDownloadFiles = function(opt) {
+        var opt = opt || {};
+        var start = opt.start || 0;
+        var limit = opt.limit || 10;
+
+        var query = new AV.Query('DownloadFile');
+        query.include('file');
+        query.equalTo('type', 'newsFile');
+        query.skip(start);
+        query.limit(limit);
+
+        return new Promise((resolve, reject) => {
+            query.find().then(list => {
+                query.count().then(count => {
+                    resolve({
+                        list: list,
+                        pagination: {
+                            start: start,
+                            limit: limit,
+                            total: count,
+                            totalPage: Math.ceil(count/limit)
+                        }
+                    });
+                });
+                
+            }, err => {
+                reject(err);
+            })
+        })
+    }
 
 };
 

@@ -9,25 +9,9 @@
             </div>
             <div class="content">
                 <ul>
-                    <li>
-                        <a href="#">•&nbsp;&nbsp; 项目团队表格</a>
-                        <div class="date">2017/11/23    </div>
-                    </li>
-                    <li>
-                        <a href="#">•&nbsp;&nbsp; 项目团队表格</a>
-                        <div class="date">2017/11/23    </div>
-                    </li>
-                    <li>
-                        <a href="#">•&nbsp;&nbsp; 项目团队表格</a>
-                        <div class="date">2017/11/23    </div>
-                    </li>
-                    <li>
-                        <a href="#">•&nbsp;&nbsp; 项目团队表格</a>
-                        <div class="date">2017/11/23    </div>
-                    </li>
-                    <li>
-                        <a href="#">•&nbsp;&nbsp; 项目团队表格</a>
-                        <div class="date">2017/11/23    </div>
+                    <li v-for="file in fileList" :key="file.id">
+                        <a :href="file.attributes.file.attributes.url" download>•&nbsp;&nbsp; {{ file.attributes.fileName }}</a>
+                        <div class="date">{{ file.createdAt }}</div>
                     </li>
                 </ul>
             </div>

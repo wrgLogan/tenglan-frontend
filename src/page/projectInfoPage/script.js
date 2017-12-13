@@ -16,8 +16,15 @@ var data = {
 
 var methods = {
     toUpload: function() {
-        var projectObjectId = this.$route.params.projectObjectId;
-        this.$switchTo('/upload/' + projectObjectId);
+        if (!this.AV.User.current()) {
+            this.$message({
+                message: '请先登录',
+                type: 'warning'
+            });
+        } else {
+            var projectObjectId = this.$route.params.projectObjectId;
+            this.$switchTo('/upload/' + projectObjectId);
+        }
     }
 }
 

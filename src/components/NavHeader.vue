@@ -1,7 +1,8 @@
 <template>
     <div class="nav-header">
         <section class="sec1">
-            <a @click="login" href="javascript:void(0);" >{{ username ? username : '登录/注册'}}</a>
+            <a @click="logIn" href="javascript:void(0);" >{{ username ? username : '登录/注册'}} </a>
+            <a @click="logOut" href="javascript:void(0);" style="padding-left: 10px;" v-show="username"> 登出</a>
         </section>
         <section class="sec2">
             <div class="logo">
@@ -27,12 +28,12 @@ export default {
             nowIndex: 0
         }
     },
-    props: ['clickTab', 'login', 'username'],
+    props: ['clickTab', 'logIn', 'logOut', 'username'],
     methods: {
         onClickTab(index) {
             this.clickTab(index);
             // this.nowIndex = index;
-        }
+        },
     },
     mounted: function() {
         var $route = this.$route;

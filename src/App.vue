@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-header :clickTab="clickTab" :login="login" :username="user.name"></nav-header>
+    <nav-header :clickTab="clickTab" :logIn="logIn" :logOut="logOut" :username="username"></nav-header>
     <transition :name="animation">
       <router-view class="page-container"></router-view>
     </transition>
@@ -12,13 +12,16 @@ export default {
   name: "app",
   data: function() {
     return {
-      projName: '藤蓝',  // 项目名称
-      user: {}
+      projName: '藤蓝常青藤',  // 项目名称
+      user: null
     };
   },
   computed: {
     animation: function() {
       return this.$root.animation;
+    },
+    username: function() {
+      return this.user ? this.user.attributes.name : null;
     }
   },
   components:{
@@ -27,6 +30,8 @@ export default {
   mounted(){
     var AV = this.AV;
     document.head.getElementsByTagName('title')[0].innerText = this.projName;
+
+    this.user = AV.User.current();
   },
   methods: {
     goTo(page) {
@@ -36,9 +41,21 @@ export default {
         var routeEmun = ['/', '/project', '/files', '', '', ''];
         this.$switchTo(routeEmun[index]);
     },
-    login() {
+    logIn() {
       this.$switchTo('/login', 'fade');
     },
+    logOut() {
+      var _this = this;
+      this.$confirm('确定要退出吗？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          _this.AV.User.logOut();
+          _this.user = null;
+        })
+      
+    }
   },
 };
 </script>

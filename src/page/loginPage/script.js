@@ -99,8 +99,12 @@ export default {
             var _this = this;
             console.log(_this.$parent);
             this.AV.User.logInWithMobilePhoneSmsCode(this.loginMobilePhone, this.loginSmscode).then(function (success) {
+                _this.$message({
+                    message: '登陆成功', 
+                    type: 'success'
+                });
                 _this.$switchTo('/');
-                _this.$parent.$data.user = _this.AV.User.current().attributes;
+                _this.$parent.$data.user = _this.AV.User.current();
             }, function (error) {
 
             });
@@ -126,7 +130,7 @@ export default {
             
             user.save().then(function() {
                 _this.$switchTo('/');
-                _this.$parent.$data.user = _this.AV.User.current().attributes;
+                _this.$parent.$data.user = _this.AV.User.current();
             })
 
             // console.log(_this.regisSmscode);
