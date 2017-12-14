@@ -26,19 +26,19 @@
                             <div class="req-title">报名要求</div>
                             <div class="req-items">
                                 <div class="req-item">
-                                    <div class="value">A</div>
+                                    <div class="value">{{project.attributes.requirement1}}</div>
                                     <div class="label">数学</div>
                                 </div>
                                 <div class="req-item">
-                                    <div class="value">110</div>
+                                    <div class="value">{{project.attributes.requirement2}}</div>
                                     <div class="label">托福</div>
                                 </div>
                                 <div class="req-item">
-                                    <div class="value">6</div>
+                                    <div class="value">{{project.attributes.requirement3}}</div>
                                     <div class="label">雅思</div>
                                 </div>
                                 <div class="req-item">
-                                    <div class="value">44322元</div>
+                                    <div class="value">{{project.attributes.requirement4}}</div>
                                     <div class="label">费用</div>
                                 </div>
                             </div>
