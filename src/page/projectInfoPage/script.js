@@ -11,7 +11,8 @@ var data = {
                 }
             }
         }
-    }
+    },
+    textNavIndex: 1
 }
 
 var methods = {
@@ -25,6 +26,10 @@ var methods = {
             var projectObjectId = this.$route.params.projectObjectId;
             this.$switchTo('/upload/' + projectObjectId);
         }
+    },
+    setTexIndex(index) {
+        console.log(index);
+        this.textNavIndex = index;
     }
 }
 

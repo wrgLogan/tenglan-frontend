@@ -161,3 +161,12 @@
 .text-nav .nav-item.on{
     border-bottom: 2px solid #1d478a;
 }
+
+.text-content{
+    margin-top: 20px;
+    width: 820px;
+    font-size: 14px;
+    line-height: 25px;
+    height: 400px;
+    overflow: auto;
+}

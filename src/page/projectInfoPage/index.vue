@@ -7,11 +7,13 @@
                 </div>
                 <div class="text-container">
                     <div class="text-nav">
-                        <div class="nav-item on">项目详情</div>
-                        <div class="nav-item">项目师资</div>
-                        <div class="nav-item">报名须知</div>
+                        <div class="nav-item" :class="{'on': textNavIndex == 1}" @click="setTexIndex(1)">项目详情</div>
+                        <div class="nav-item" :class="{'on': textNavIndex == 2}" @click="setTexIndex(2)">项目师资</div>
+                        <div class="nav-item" :class="{'on': textNavIndex == 3}" @click="setTexIndex(3)">报名须知</div>
                     </div>
-                    <div class="text-content">{{project.attributes.content}}</div>
+                    <div class="text-content" v-html="project.attributes.projectDetails" v-show="textNavIndex == 1"></div>
+                    <div class="text-content" v-html="project.attributes.projectTeachers" v-show="textNavIndex == 2"></div>
+                    <div class="text-content" v-html="project.attributes.projectNotice" v-show="textNavIndex == 3"></div>
                 </div>
             </div>
             <div class="side-container">
