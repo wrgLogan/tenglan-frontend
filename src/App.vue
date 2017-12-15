@@ -92,4 +92,13 @@ body {
   width: 100%;
 }
 
+.el-dialog .el-dialog__header{
+  background-color: #1e488b;
+  text-align: center;
+}
+.el-dialog .el-dialog__header span{
+  color: #fff;
+  font-size: 16px;  
+}
+
 </style>

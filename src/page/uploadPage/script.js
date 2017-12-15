@@ -14,7 +14,8 @@ var data = {
                 }
             }
         }
-    }
+    },
+    dialogVisible: false
 }
 
 var methods = {
