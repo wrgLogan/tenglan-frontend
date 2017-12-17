@@ -238,6 +238,42 @@ var install = function (Vue, option) {
         })
     }
 
+    // 检测项目是否已经申请过
+    Vue.prototype.checkApplyRepeat = function(opt) {
+        var opt = opt || {};
+        var projectObjectId = opt.projectObjectId;
+        var userObjectId = AV.User.current() ? AV.User.current().id : null;
+        var isRepeat = false;
+        
+        var applyQuery = new AV.Query('Application');
+        
+        return new Promise((resolve, reject) => {
+            if (!userObjectId) {
+                reject('请先登录');
+            } else {
+                var project = AV.Object.createWithoutData('Project', projectObjectId);
+                var applicant  = AV.Object.createWithoutData('_User', userObjectId);
+                applyQuery.equalTo('project', project);
+                applyQuery.equalTo('applicant', applicant);
+
+                applyQuery.find().then(applyList => {
+                    console.log(applyList);
+                    if (!applyList.length) {
+                        isRepeat = false;
+                        resolve(isRepeat);
+                    } else {
+                        applyList.forEach(apply => {
+                            if (apply.attributes.status1 !== 'DELETED') {
+                                isRepeat = true;
+                            }
+                        });
+
+                        resolve(isRepeat);
+                    }
+                })
+            }
+        })
+    }
 };
 
 export default {

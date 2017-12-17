@@ -17,9 +17,15 @@ var data = {
 
 var methods = {
     toUpload: function() {
+        console.log(this.project);
         if (!this.AV.User.current()) {
             this.$message({
                 message: '请先登录',
+                type: 'warning'
+            });
+        } else if (this.project.attributes.status != 2){
+            this.$message({
+                message: '该项目不是“正在进行”的项目',
                 type: 'warning'
             });
         } else {
