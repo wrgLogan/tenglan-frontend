@@ -6,6 +6,7 @@ import projectInfo from '@/page/projectInfoPage/index'
 import login from '@/page/loginPage/index'
 import files from '@/page/filesPage/index'
 import upload from '@/page/uploadPage/index'
+import userCenter from '@/page/userCenterPage/index'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/upload/:projectObjectId',
       name: '资料上传',
       component: upload
+    },
+    {
+      path: '/usercenter',
+      name: '个人中心',
+      component: userCenter
     }
   ]
 })

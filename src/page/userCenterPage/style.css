@@ -1,0 +1,244 @@
+/* usercenterbg.jpg */
+
+.page{
+    display: flex;
+    flex-direction: column;
+    /* bottom: 0px; */
+    /* height: 100%; */
+    background-color: #fafafa;
+}
+
+.banner-container img{
+    width: 100%;
+    width: 100vw;
+    
+}
+
+.banner-container{
+    height: 13.541666666666668vw;
+}
+
+.main-container{
+    flex: 1;
+    margin: 20px auto 0px;
+    display: flex;
+    /* flex-direction:  */
+}
+
+.footer{
+    height: 32px;   
+}
+
+.footer-sec2{
+    height: 32px;
+    line-height: 32px;
+    background-color: #fafafa;
+    color: #999;
+    text-align: center;
+}
+
+.aside{
+    background-color: #fff;
+    min-height: 648px;
+    margin-right: 20px;
+}
+
+.aside-menu{
+    padding: 20px 23px;
+}
+
+.aside-menu-header{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-image: url('../../assets/image/downarrow.png');
+    background-size: 16px 8px;
+    background-repeat: no-repeat;
+    background-position: right 0px top 8px;
+}
+
+.aside-menu-header.active{
+    margin-bottom: 32px;
+    background-image: url('../../assets/image/toparrow.png');
+}
+
+.aside-menu-header img.icon{
+    height: 20px;
+    margin-right: 13px;
+}
+
+.aside-menu-header p{
+    font-size: 16px;
+    color: #333;
+    margin-right: 63px;
+}
+
+.aside-menu-header .arrow{
+    width: 12px;
+    height: 8px;
+}
+
+.aside-menu-item-container{
+    position: relative;
+    padding: 8px 0 8px 35px;
+}
+
+.aside-menu-item-container:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    width: 6px;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #eee;
+}
+
+.aside-menu-item{
+    font-size: 14px;
+    color: #333;
+}
+
+.aside-menu-item{
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.aside-menu-item.active{
+    position: relative;
+    color: #1e488b;
+}
+
+.aside-menu-item.active:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -30px;
+    top: -7px;
+    width: 6px;
+    height: 33px;
+    border-radius: 3px;
+    background-color: #1e488b;
+    z-index: 1;
+}
+
+.aside-menu-item:last-child{
+    margin-bottom: 0px;
+}
+
+.body{
+    width: 940px;
+    height: auto;
+    background-color: #fff;
+}
+
+.userinfo-form{
+    padding: 80px;
+}
+
+.form-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.input-group{
+    width: 340px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label{
+    font-size: 14px;
+    color: #333;
+    margin-right: 13px;
+}
+
+.input-group input[type="text"]{
+    height: 30px;
+    width: 250px;
+    border: 1px solid #999;
+    padding-left: 10px;
+}
+
+.input-group input[type="text"]:focus{
+    border: 1px solid #1e488b;
+    outline: none;
+    color: #1e488b;
+}
+
+.input-group input[type="text"]:read-only{
+    border: none;
+}
+
+.radio-container{
+    font-size: 14px;
+    color: #333;
+    margin-right: 40px;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-item{
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    background-color: #eee;
+    color: #333;
+    font-size: 14px;
+    line-height: 30px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.btn-item.primary{
+    background-color: #1e488b;
+    color: #fff;
+}
+
+.message-container, .application-container{
+    padding: 30px;
+}
+
+.message-item, .application-item{
+    position: relative;
+    /* height: 100px; */
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.message-item:hover, .application-item:hover{
+    border-color: #1e488b;
+}
+
+.message-item .title, .application-item .title{
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.message-item .content, .application-item .content{
+    color: #333;
+    font-size: 14px;
+    max-width: 670px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.message-item .check-btn{
+    position: absolute;
+    font-size: 14px;
+    right: 30px;
+    bottom: 23px;
+    color: #1e488b;
+    cursor: pointer;
+}

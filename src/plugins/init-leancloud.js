@@ -84,6 +84,28 @@ var install = function (Vue, option) {
 
     }
 
+    // 获得个人用户信息
+    Vue.prototype.getMyUserinfo = function() {
+        var user = AV.User.current();
+
+        return new Promise((resolve, reject) => {
+            if (user) {
+                var query = new AV.Query('_User');
+                query.get(user.id).then(res => {
+                    resolve(res);
+                }, err => {
+                    reject(err);
+                })
+            } else {
+                reject('请先登录')
+            }
+        })
+        
+    }
+
+    // 更新用户信息
+    
+
     // 获得项目列表 可以通过项目阶段查询 未上线->0 即将启动->1 正在进行->2 往期项目->3
     Vue.prototype.getProjects = function (opt) {
         var opt = opt || {};
@@ -273,6 +295,93 @@ var install = function (Vue, option) {
                 })
             }
         })
+    }
+
+    //  获得自己的消息
+    Vue.prototype.getMessages = function(opt) {
+        var opt = opt || {};
+        var start = opt.start || 0;
+        var limit = opt.limit || 4;
+
+        return new Promise((resolve, reject) => {
+            var currentUser = AV.User.current();
+            
+            if (!currentUser) {
+                reject('请先登录');
+            } else {
+                var userObj = AV.Object.createWithoutData('_User', currentUser.id);
+                
+                var query1 = new AV.Query('Message');
+                query1.equalTo('type', 'public');
+        
+                var query2 = new AV.Query('Message');
+                query2.equalTo('type', 'private');
+                query2.equalTo('receiver', userObj);
+                
+                var query = AV.Query.or(query1, query2);
+                query.skip(start);
+                query.limit(limit);
+
+                query.find().then(list => {
+                    query.count().then(count => {
+                        resolve({
+                            list: list,
+                            pagination: {
+                                start: start,
+                                limit: limit,
+                                total: count,
+                                totalPage: Math.ceil(count/limit)
+                            }
+                        });
+                    });
+                }, err => {
+                    reject(err);
+                });
+            };
+        });
+    }
+
+    // 获取自己的申请列表
+    Vue.prototype.getMyApplications = function(opt) {
+        var opt = opt || {};
+        var start = opt.start || 0;
+        var limit = opt.limit || 4;
+
+        return new Promise((resolve, reject) => {
+            var currentUser = AV.User.current();
+            
+            if (!currentUser) {
+                reject('请先登录');
+            } else {
+                var userObj = AV.Object.createWithoutData('_User', currentUser.id);
+                
+                var query = new AV.Query('Application');
+                query.include('project');
+                query.include('applicant');
+                query.equalTo('applicant', userObj);
+                query.skip(start);
+                query.limit(limit);
+
+                query.find().then(list => {
+                    query.count().then(count => {
+                        resolve({
+                            list: list,
+                            pagination: {
+                                start: start,
+                                limit: limit,
+                                total: count,
+                                totalPage: Math.ceil(count/limit)
+                            }
+                        })
+                    }, err => {
+                        reject(err);
+                    })
+                }, err => {
+                    reject(err);
+                });
+            };
+        })
+        
     }
 };
 

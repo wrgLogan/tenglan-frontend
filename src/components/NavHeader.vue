@@ -58,8 +58,8 @@ export default {
                 this.nowIndex = 1;
             } else if (page.fullPath == '/files') {
                 this.nowIndex = 2;
-            } else if (page.fullPath == '/files') {
-                this.nowIndex = 2;
+            } else if (page.fullPath == '/usercenter') {
+                this.nowIndex = 3;
             } else {
                 this.nowIndex = null;
             }

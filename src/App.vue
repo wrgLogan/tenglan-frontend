@@ -28,17 +28,20 @@ export default {
     NavHeader
   },
   mounted(){
+    var _this = this;
     var AV = this.AV;
     document.head.getElementsByTagName('title')[0].innerText = this.projName;
 
-    this.user = AV.User.current();
+    this.getMyUserinfo().then(user => {
+        _this.user = user;
+    })
   },
   methods: {
     goTo(page) {
       this.$switchTo(page);
     },
     clickTab(index) {
-        var routeEmun = ['/', '/project', '/files', '', '', ''];
+        var routeEmun = ['/', '/project', '/files', '/usercenter', '', ''];
         this.$switchTo(routeEmun[index]);
     },
     logIn() {
