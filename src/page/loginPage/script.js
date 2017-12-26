@@ -1,5 +1,5 @@
 import loginBg from '@/assets/image/loginbg1.png'
-import registerBg from '@/assets/image/loginbg1.png'
+import registerBg from '@/assets/image/loginbg2.png'
 
 var data = {
     status: 'login',
