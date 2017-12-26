@@ -1,9 +1,12 @@
 <template>
     <div class="nav-header">
-        <section class="sec1">
-            <a @click="logIn" href="javascript:void(0);" >{{ username ? username : '登录/注册'}} </a>
-            <a @click="logOut" href="javascript:void(0);" style="padding-left: 10px;" v-show="username"> 登出</a>
-        </section>
+        <div class="sec1-container">
+            <section class="sec1">
+                <a @click="logIn" href="javascript:void(0);" >{{ username ? username : '登录/注册'}} </a>
+                <a @click="logOut" href="javascript:void(0);" style="padding-left: 10px;" v-show="username"> 登出</a>
+            </section>
+        </div>
+        
         <section class="sec2">
             <div class="logo">
                 <img src="../assets/image/logo.png" />
@@ -41,27 +44,25 @@ export default {
         console.log($route);
         if ($route.path == '/') {
             this.nowIndex = 0;
-        } else if ($route.fullPath == '/project') {
+        } else if ($route.fullPath == '/project' || $route.fullPath.indexOf('/projectInfo') > -1 || $route.fullPath.indexOf('/upload') > -1 ) {
             this.nowIndex = 1;
-        } else if ($route.fullPath == '/projectInfo') {
+        } else if ($route.fullPath == '/files') {
             this.nowIndex = 2;
-        } else {
-            this.nowIndex = null;
-        }
+        } else if ($route.fullPath == '/usercenter') {
+            this.nowIndex = 3;
+        } 
     },
     watch: {
         '$route': function(page) {
             console.log(page);
             if (page.fullPath == '/') {
                 this.nowIndex = 0;
-            } else if (page.fullPath == '/project') {
+            } else if (page.fullPath == '/project' || page.fullPath.indexOf('/projectInfo') > -1 || page.fullPath.indexOf('/upload') > -1 ) {
                 this.nowIndex = 1;
             } else if (page.fullPath == '/files') {
                 this.nowIndex = 2;
             } else if (page.fullPath == '/usercenter') {
                 this.nowIndex = 3;
-            } else {
-                this.nowIndex = null;
             }
         }
     }
@@ -73,6 +74,10 @@ export default {
     /* border-bottom: 1px solid #000; */
     height: 120px;
     width: 100%;
+}
+
+.nav-header .sec1-container{
+    background-color: #fcfcfc;
 }
 
 .nav-header .sec1{
@@ -88,6 +93,12 @@ export default {
     color: #333;
     font-size: 12px;
     text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.nav-header .sec1 a:hover{
+    color: #1d478a;
 }
 
 .nav-header .sec2{

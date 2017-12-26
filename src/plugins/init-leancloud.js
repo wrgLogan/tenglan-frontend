@@ -206,7 +206,7 @@ var install = function (Vue, option) {
                     application.set('applyFile', uploadFileObjects.applyFile);  // 关联申请表
                     application.set('reportCardFile', uploadFileObjects.reportCardFile);  // 关联成绩单
                     application.set('videoFile', uploadFileObjects.videoFile);  // 关联视频文件
-                    application.set('status1', "NO");
+                    application.set('status1', "IN_REVIEW");
                     application.set('status2', "NO");
                     application.set('cancel', false);
                     console.log('保存申请');
@@ -382,6 +382,31 @@ var install = function (Vue, option) {
             };
         })
         
+    }
+
+    // 检查用户是否重复注册
+    Vue.prototype.checkUserRepeat = function(opt) {
+        var opt = opt || {};
+        var username = opt.username;
+        var isRepeat = false;
+        console.log(username);
+
+        return new Promise((resolve, reject) => {
+            var query = new AV.Query('_User');
+            query.equalTo('username', username);
+            query.find().then(res => {
+                console.log(res);
+                if (res.length > 0) {
+                    isRepeat = true;
+                    resolve(isRepeat);
+                } else {
+                    isRepeat = false;
+                    resolve(isRepeat);
+                };
+            }, err => {
+                reject(err);
+            })
+        })
     }
 };
 

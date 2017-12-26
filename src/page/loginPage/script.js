@@ -1,3 +1,6 @@
+import loginBg from '@/assets/image/loginbg1.png'
+import registerBg from '@/assets/image/loginbg1.png'
+
 var data = {
     status: 'login',
     regisStep: '1',
@@ -9,7 +12,9 @@ var data = {
     postCode: '',
     university: '',
     name: '',
-    address: ''
+    address: '',
+    loginBg: loginBg,
+    registerBg: registerBg
 }
 
 export default {
@@ -26,11 +31,50 @@ export default {
         nextStep: function () {
             var _this = this;
 
-            this.AV.User.signUpOrlogInWithMobilePhone(this.regisMobilePhone, this.regisSmscode).then(function() {
-                _this.regisStep = 2;
-            }, function(err) {
+            if (this.regisMobilePhone == '') {
+                _this.$message({
+                    'message': '用户名不能为空',
+                    'type': 'warning'
+                });
+                return;
+            }
 
+            // 检查用户是否已经注册过
+            _this.checkUserRepeat({
+                username: _this.regisMobilePhone
+            }).then(isRepeat => {
+                console.log(isRepeat);
+                if (isRepeat) {
+                    _this.$message({
+                        'message': '该手机号已注册过',
+                        'type': 'warning'
+                    });
+                } else {
+                    if (_this.regisSmscode == '') {
+                        _this.$message({
+                            'message': '验证码不能为空',
+                            'type': 'warning'
+                        });
+                        return;
+                    }
+        
+                    _this.AV.User.signUpOrlogInWithMobilePhone(_this.regisMobilePhone, _this.regisSmscode).then(function() {
+                        _this.regisStep = 2;
+                    }, function(err) {
+                        _this.$message({
+                            'message': '您输入的验证码有误',
+                            'type': 'error'
+                        });
+                    })
+                }
+            }).catch(err => {
+                _this.$message({
+                    'message': err,
+                    'type': 'error'
+                });
             })
+
+            
 
             // this.AV.Cloud.verifySmsCode(this.regisSmscode, this.regisMobilePhone).then(function () {
             //     //验证成功
@@ -97,7 +141,23 @@ export default {
         })(),
         loginBySmscode() {
             var _this = this;
-            console.log(_this.$parent);
+            
+            if (this.loginMobilePhone == '') {
+                _this.$message({
+                    'message': '用户名不能为空',
+                    'type': 'warning'
+                });
+                return;
+            }
+
+            if (this.loginSmscode == '') {
+                _this.$message({
+                    'message': '验证码不能为空',
+                    'type': 'warning'
+                });
+                return;
+            }
+
             this.AV.User.logInWithMobilePhoneSmsCode(this.loginMobilePhone, this.loginSmscode).then(function (success) {
                 _this.$message({
                     message: '登陆成功', 
@@ -106,7 +166,10 @@ export default {
                 _this.$switchTo('/');
                 _this.$parent.$data.user = _this.AV.User.current();
             }, function (error) {
-
+                _this.$message({
+                    'message': '您输入的验证码有误',
+                    'type': 'error'
+                });
             });
         },
         signUp() {

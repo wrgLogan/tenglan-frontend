@@ -42,10 +42,22 @@ export default {
     },
     clickTab(index) {
         var routeEmun = ['/', '/project', '/files', '/usercenter', '', ''];
+
+        if (index == 3 && !this.AV.User.current()) {
+          this.$message({
+            'message': '请先登录',
+            'type': 'warning'
+          })
+          return;
+        }
         this.$switchTo(routeEmun[index]);
     },
     logIn() {
-      this.$switchTo('/login', 'fade');
+      if (!this.user) {
+        this.$switchTo('/login', 'fade');
+      } else {
+        this.$switchTo('/usercenter', 'fade');
+      }
     },
     logOut() {
       var _this = this;

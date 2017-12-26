@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <!-- <transition name="fade"> -->
-            <div class="login-container" v-show="status == 'login'">
+            <div class="login-container" :style="{ backgroundImage: 'url(' + loginBg + ')' }" v-show="status == 'login'">
                 <div class="overlay"></div>
                 <div class="modal">
                     <div class="header">
@@ -29,7 +29,7 @@
             </div>
         <!-- </transition> -->
         <!-- <transition name="fade"> -->
-            <div class="register-container" v-show="status == 'register'">
+            <div class="register-container" :style="{ backgroundImage: 'url(' + registerBg + ')' }" v-show="status == 'register'">
                 <div class="overlay"></div>
                 <div class="modal">
                     <div class="header">

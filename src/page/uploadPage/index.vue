@@ -1,5 +1,5 @@
 <template>
-    <div class="page">
+    <div class="page" v-loading.fullscreen.lock="fullscreenLoading">
         <div class="banner-container">
             <img src="../../assets/image/fileupbg.jpg" />
         </div>
@@ -57,6 +57,7 @@
         <el-dialog
             title="上传帮助"
             :visible.sync="dialogVisible"
+            
             width="300px">
             <p>您可以使用手机的录像功能，录制3分钟的自我介绍视频，保存为.mp4格式，然后上传到指定区域。</p>
             <br>

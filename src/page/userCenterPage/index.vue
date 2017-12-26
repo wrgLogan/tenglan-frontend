@@ -36,13 +36,13 @@
                         </div>
                         <div class="input-group">
                             <label for="gender">性　　别：</label>
-                            <div class="radio-container">
-                                <input type="radio" v-model="user.attributes.gender" value="MALE"/>
-                                <span>先生</span>
+                            <div class="radio-container" v-show="editable || user.attributes.gender == 'MALE'">
+                                <input type="radio" v-show="editable" v-model="user.attributes.gender" value="MALE"/>
+                                <span >先生</span>
                             </div>
-                            <div class="radio-container">
-                                <input type="radio" v-model="user.attributes.gender" value="FEMALE"/>
-                                <span>女士</span>
+                            <div class="radio-container" v-show="editable || user.attributes.gender == 'FEMALE'">
+                                <input type="radio" v-show="editable" v-model="user.attributes.gender" value="FEMALE"/>
+                                <span >女士</span>
                             </div>
                         </div>
                     </div>
